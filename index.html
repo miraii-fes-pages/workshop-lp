@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>おかねの絵本ワークショップ｜親子で学ぶお金の教室</title>
+  <meta name="description" content="絵本を使って楽しくお金を学ぶ、幼稚園のお子さまと保護者向けの親子ワークショップ。限定〇組、先着順受付中！" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Yomogi&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --amber: #FAC775;
+      --coral: #F0997B;
+      --pink: #ED93B1;
+      --purple: #AFA9EC;
+      --purple-deep: #534AB7;
+      --teal: #5DCAA5;
+      --cream: #FFF8F0;
+      --dark: #2C2420;
+      --muted: #888;
+      --radius: 20px;
+      --radius-lg: 28px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 5rem 1.5rem 4rem;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, #FAF0E6 0%, #FDE8D8 35%, #F9D5E8 65%, #E8E0FF 100%);
+      z-index: 0;
+    }
+
+    /* floating shapes */
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.55;
+      animation: float 6s ease-in-out infinite;
+    }
+    .shape-1 { width: 200px; height: 200px; background: var(--amber); top: -60px; left: -60px; animation-delay: 0s; }
+    .shape-2 { width: 140px; height: 140px; background: var(--pink); top: 40px; right: -30px; animation-delay: 1.2s; }
+    .shape-3 { width: 100px; height: 100px; background: var(--teal); bottom: 80px; left: 30px; animation-delay: 2.4s; }
+    .shape-4 { width: 80px; height: 80px; background: var(--purple); bottom: 60px; right: 80px; animation-delay: 0.8s; }
+    .shape-5 { width: 60px; height: 60px; background: var(--coral); top: 45%; left: 8%; animation-delay: 1.8s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-18px) rotate(6deg); }
+    }
+
+    .hero-content { position: relative; z-index: 1; max-width: 640px; }
+
+    .hero-tag {
+      display: inline-block;
+      background: #fff;
+      color: var(--coral);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 6px 18px;
+      border-radius: 999px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 12px rgba(240,153,123,0.2);
+      animation: fadein 0.6s ease both;
+    }
+
+    .hero-emoji {
+      font-size: 64px;
+      display: block;
+      margin-bottom: 1rem;
+      animation: fadein 0.6s 0.1s ease both;
+    }
+
+    .hero-title {
+      font-family: 'Yomogi', cursive;
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      line-height: 1.35;
+      color: var(--dark);
+      margin-bottom: 1rem;
+      animation: fadein 0.6s 0.2s ease both;
+    }
+    .hero-title span { color: var(--purple-deep); }
+
+    .hero-sub {
+      font-size: clamp(14px, 2.5vw, 17px);
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      animation: fadein 0.6s 0.3s ease both;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: var(--purple-deep);
+      color: #fff;
+      font-size: 17px;
+      font-weight: 700;
+      padding: 16px 48px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(83,74,183,0.35);
+      transition: transform 0.15s, box-shadow 0.15s;
+      animation: fadein 0.6s 0.4s ease both;
+    }
+    .hero-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(83,74,183,0.4);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      animation: fadein 1s 1s ease both;
+    }
+    .hero-scroll .arrow {
+      width: 20px; height: 20px;
+      border-right: 2px solid var(--muted);
+      border-bottom: 2px solid var(--muted);
+      transform: rotate(45deg);
+      animation: bounce 1.6s ease-in-out infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: rotate(45deg) translateY(0); }
+      50% { transform: rotate(45deg) translateY(5px); }
+    }
+
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── SECTION COMMON ── */
+    section { padding: 5rem 1.5rem; }
+    .container { max-width: 900px; margin: 0 auto; }
+
+    .sec-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--coral);
+      margin-bottom: 0.75rem;
+    }
+    .sec-label::before {
+      content: '';
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--coral);
+      border-radius: 2px;
+    }
+
+    .sec-title {
+      font-family: 'Yomogi', cursive;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      line-height: 1.4;
+      color: var(--dark);
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── INFO STRIP ── */
+    .info-strip {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 2rem 2.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.5rem;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.06);
+      margin: -2rem auto 0;
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+    }
+    .info-item { text-align: center; }
+    .info-icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .info-label { font-size: 11px; color: var(--muted); margin-bottom: 4px; letter-spacing: 0.06em; }
+    .info-value { font-size: 15px; font-weight: 700; color: var(--dark); }
+
+    /* ── FEATURES ── */
+    .features-section { background: #fff; }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.25rem;
+    }
+    .feature-card {
+      background: var(--cream);
+      border-radius: var(--radius);
+      padding: 1.75rem 1.25rem;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .feature-card:hover { transform: translateY(-4px); }
+    .feature-card .fc-emoji { font-size: 40px; display: block; margin-bottom: 1rem; }
+    .feature-card .fc-title { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; }
+    .feature-card .fc-desc { font-size: 13px; color: #666; line-height: 1.7; }
+
+    /* ── FLOW ── */
+    .flow-section { background: var(--cream); }
+    .flow-list { display: flex; flex-direction: column; gap: 0; }
+    .flow-item {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 1.25rem;
+      align-items: flex-start;
+      padding: 1.5rem 0;
+      border-bottom: 1.5px dashed rgba(0,0,0,0.08);
+    }
+    .flow-item:last-child { border-bottom: none; }
+    .flow-num {
+      width: 52px; height: 52px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Yomogi', cursive;
+      font-size: 22px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .flow-body .fl-title { font-size: 16px; font-weight: 700; margin-bottom: 4px; color: var(--dark); }
+    .flow-body .fl-time { font-size: 11px; color: var(--muted); margin-bottom: 6px; letter-spacing: 0.06em; }
+    .flow-body .fl-desc { font-size: 13px; color: #555; line-height: 1.7; }
+
+    /* ── VOICE ── */
+    .voice-section { background: #fff; }
+    .voice-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+    .voice-card {
+      background: var(--cream);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      position: relative;
+    }
+    .voice-card::before {
+      content: '❝';
+      font-size: 48px;
+      color: var(--purple);
+      opacity: 0.3;
+      position: absolute;
+      top: 8px; right: 16px;
+      line-height: 1;
+    }
+    .voice-stars { font-size: 14px; color: var(--amber); margin-bottom: 10px; }
+    .voice-text { font-size: 13px; color: #444; line-height: 1.8; margin-bottom: 12px; }
+    .voice-who { font-size: 11px; color: var(--muted); }
+
+    /* ── FAQ ── */
+    .faq-section { background: var(--cream); }
+    details {
+      background: #fff;
+      border-radius: var(--radius);
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+    details[open] { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    summary {
+      padding: 1.1rem 1.5rem;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--dark);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: '+';
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--purple-deep);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+    details[open] summary::after { transform: rotate(45deg); }
+    .faq-answer {
+      padding: 0 1.5rem 1.25rem;
+      font-size: 13px;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    /* ── APPLY ── */
+    .apply-section {
+      background: linear-gradient(135deg, #E8E0FF 0%, #FBEAF0 50%, #FDE8D8 100%);
+    }
+    .apply-box {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 3rem 2rem;
+      text-align: center;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .apply-emoji { font-size: 48px; display: block; margin-bottom: 1rem; }
+    .apply-title {
+      font-family: 'Yomogi', cursive;
+      font-size: 1.8rem;
+      color: var(--purple-deep);
+      margin-bottom: 0.5rem;
+    }
+    .apply-sub { font-size: 13px; color: var(--muted); margin-bottom: 0.5rem; line-height: 1.7; }
+    .apply-limit {
+      display: inline-block;
+      background: #FDE8D8;
+      color: var(--coral);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 16px;
+      border-radius: 999px;
+      margin-bottom: 1.75rem;
+    }
+    .apply-btn {
+      display: inline-block;
+      background: var(--purple-deep);
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      padding: 18px 56px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(83,74,183,0.35);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .apply-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(83,74,183,0.4);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 12px;
+      line-height: 2;
+    }
+    footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+
+    /* ── REVEAL ANIMATION ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 600px) {
+      .info-strip { padding: 1.5rem 1.25rem; gap: 1rem; }
+      .apply-box { padding: 2rem 1.25rem; }
+      .apply-btn { font-size: 16px; padding: 16px 36px; }
+      section { padding: 3.5rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="shape shape-1"></div>
+  <div class="shape shape-2"></div>
+  <div class="shape shape-3"></div>
+  <div class="shape shape-4"></div>
+  <div class="shape shape-5"></div>
+
+  <div class="hero-content">
+    <span class="hero-tag">幼稚園のお子さまと保護者の方へ</span>
+    <span class="hero-emoji">📚✨💰</span>
+    <h1 class="hero-title">
+      おかねの絵本で<br>
+      <span>親子いっしょに</span>学ぼう！
+    </h1>
+    <p class="hero-sub">
+      楽しいワークショップで、お金の大切さを"体感"できる<br>
+      特別な親子の時間をお届けします
+    </p>
+    <a href="#apply" class="hero-cta">🎟️ 今すぐ申し込む</a>
+  </div>
+
+  <div class="hero-scroll">
+    <span>SCROLL</span>
+    <div class="arrow"></div>
+  </div>
+</header>
+
+<!-- ===== INFO STRIP ===== -->
+<div class="container">
+  <div class="info-strip reveal">
+    <div class="info-item">
+      <span class="info-icon">📅</span>
+      <div class="info-label">開催日</div>
+      <div class="info-value">2026年〇月〇日（〇）</div>
+    </div>
+    <div class="info-item">
+      <span class="info-icon">🕙</span>
+      <div class="info-label">時間</div>
+      <div class="info-value">10:00〜12:00</div>
+    </div>
+    <div class="info-item">
+      <span class="info-icon">📍</span>
+      <div class="info-label">場所</div>
+      <div class="info-value">〇〇会場</div>
+    </div>
+    <div class="info-item">
+      <span class="info-icon">👨‍👩‍👧</span>
+      <div class="info-label">定員</div>
+      <div class="info-value">〇組（先着順）</div>
+    </div>
+    <div class="info-item">
+      <span class="info-icon">💴</span>
+      <div class="info-label">参加費</div>
+      <div class="info-value">〇,〇〇〇円（税込）</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FEATURES ===== -->
+<section class="features-section">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label">EXPERIENCE</div>
+      <h2 class="sec-title">こんな体験ができます</h2>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card reveal">
+        <span class="fc-emoji">📖</span>
+        <div class="fc-title">絵本の読み聞かせ</div>
+        <div class="fc-desc">お金の使い方を楽しいストーリーで学べます。子どもの目線に合わせたやさしい内容です。</div>
+      </div>
+      <div class="feature-card reveal">
+        <span class="fc-emoji">🎮</span>
+        <div class="fc-title">親子ゲーム体験</div>
+        <div class="fc-desc">ゲームを通じてお金の価値を体感！遊びながら自然と身につきます。</div>
+      </div>
+      <div class="feature-card reveal">
+        <span class="fc-emoji">💬</span>
+        <div class="fc-title">親子で対話</div>
+        <div class="fc-desc">「お金って何？」を家族で話し合うきっかけに。日常会話が変わります。</div>
+      </div>
+      <div class="feature-card reveal">
+        <span class="fc-emoji">🎁</span>
+        <div class="fc-title">お土産つき</div>
+        <div class="fc-desc">参加者全員にオリジナル絵本プレゼント。家でも学びが続きます。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FLOW ===== -->
+<section class="flow-section">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label">PROGRAM</div>
+      <h2 class="sec-title">当日のながれ</h2>
+    </div>
+    <div class="flow-list">
+      <div class="flow-item reveal">
+        <div class="flow-num" style="background: var(--amber);">1</div>
+        <div class="flow-body">
+          <div class="fl-title">受付・自己紹介タイム</div>
+          <div class="fl-time">10:00〜10:15</div>
+          <div class="fl-desc">お子さん同士が仲よくなれる、アイスブレイクゲームから始まります。緊張しないでご参加ください！</div>
+        </div>
+      </div>
+      <div class="flow-item reveal">
+        <div class="flow-num" style="background: var(--coral);">2</div>
+        <div class="flow-body">
+          <div class="fl-title">絵本の読み聞かせ</div>
+          <div class="fl-time">10:15〜10:40</div>
+          <div class="fl-desc">プロが読む「おかねの絵本」で、お金の大切さをたのしく学びます。子どもも大人も夢中になれる時間です。</div>
+        </div>
+      </div>
+      <div class="flow-item reveal">
+        <div class="flow-num" style="background: var(--pink);">3</div>
+        <div class="flow-body">
+          <div class="fl-title">親子ワークショップ</div>
+          <div class="fl-time">10:40〜11:30</div>
+          <div class="fl-desc">絵本のシーンをもとに、親子で話し合い・体験活動を行います。笑いあり、気づきあり！</div>
+        </div>
+      </div>
+      <div class="flow-item reveal">
+        <div class="flow-num" style="background: var(--purple);">4</div>
+        <div class="flow-body">
+          <div class="fl-title">振り返り＆質問タイム</div>
+          <div class="fl-time">11:30〜12:00</div>
+          <div class="fl-desc">気づきをシェア！ファイナンシャルプランナーへの個別相談も可能です（任意）。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VOICE ===== -->
+<section class="voice-section">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label">VOICE</div>
+      <h2 class="sec-title">参加者の声</h2>
+    </div>
+    <div class="voice-grid">
+      <div class="voice-card reveal">
+        <div class="voice-stars">★★★★★</div>
+        <p class="voice-text">子どもが「節約ってかっこいい！」と言い出してびっくり。家での会話がガラリと変わりました。</p>
+        <div class="voice-who">4歳のお子さんをお持ちの保護者さま</div>
+      </div>
+      <div class="voice-card reveal">
+        <div class="voice-stars">★★★★★</div>
+        <p class="voice-text">難しい話は一切なく、子どもも大人も楽しめました。また参加したいです！</p>
+        <div class="voice-who">5歳のお子さんをお持ちの保護者さま</div>
+      </div>
+      <div class="voice-card reveal">
+        <div class="voice-stars">★★★★★</div>
+        <p class="voice-text">親子でいっしょに笑いながら学べる。こんな体験はなかなかないですよね。本当によかったです。</p>
+        <div class="voice-who">6歳のお子さんをお持ちの保護者さま</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq-section">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label">FAQ</div>
+      <h2 class="sec-title">よくある質問</h2>
+    </div>
+    <div class="reveal">
+      <details>
+        <summary>対象年齢は何歳からですか？</summary>
+        <p class="faq-answer">幼稚園に通うお子さま（3〜6歳）とその保護者の方を対象としています。きょうだいでの参加もご相談ください。</p>
+      </details>
+      <details>
+        <summary>参加費はかかりますか？</summary>
+        <p class="faq-answer">参加費は〇,〇〇〇円（税込）です。当日、現金またはキャッシュレス決済にてお支払いください。</p>
+      </details>
+      <details>
+        <summary>金融の知識がなくても大丈夫ですか？</summary>
+        <p class="faq-answer">まったく問題ありません！専門用語は一切使わず、絵本ベースで楽しく進めます。保護者の方も一緒に学べる内容です。</p>
+      </details>
+      <details>
+        <summary>キャンセルはできますか？</summary>
+        <p class="faq-answer">開催3日前までキャンセル可能です。それ以降はキャンセル待ちとなります。詳細はお申し込み後のメールをご確認ください。</p>
+      </details>
+      <details>
+        <summary>子どもだけでも参加できますか？</summary>
+        <p class="faq-answer">本ワークショップは親子での参加を前提としています。保護者の方と一緒にぜひご参加ください。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== APPLY ===== -->
+<section class="apply-section" id="apply">
+  <div class="container">
+    <div class="apply-box reveal">
+      <span class="apply-emoji">🎟️</span>
+      <h2 class="apply-title">参加申し込みはこちら</h2>
+      <p class="apply-sub">定員になり次第、受付を締め切ります。<br>お早めにお申し込みください！</p>
+      <span class="apply-limit">残りわずか！お急ぎください</span><br>
+      <a href="#" class="apply-btn">申し込みフォームへ →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>主催：株式会社miraii エデュテイメントUnit</p>
+  <p>お問い合わせ：<a href="mailto:info@miraii.co.jp">info@miraii.co.jp</a></p>
+  <p style="margin-top: 0.5rem;">© 2026 miraii Inc. All rights reserved.</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
