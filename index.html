@@ -54,6 +54,18 @@
     @keyframes bounce { 0%,100%{transform:rotate(45deg) translateY(0)} 50%{transform:rotate(45deg) translateY(5px)} }
     @keyframes fadein { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
 
+    /* HERO GIFTS */
+    .hero-gifts { margin-top:2rem; animation:fadein .6s .5s ease both; }
+    .hero-gift-label { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:700; letter-spacing:.12em; color:var(--gold); background:rgba(245,200,66,.15); border:2px solid var(--gold); border-radius:999px; padding:5px 20px; margin-bottom:1rem; }
+    .hero-gift-items { display:flex; align-items:stretch; gap:0; background:rgba(255,255,255,.07); border:2px solid rgba(245,200,66,.45); border-radius:var(--radius-lg); overflow:hidden; backdrop-filter:blur(8px); box-shadow:0 6px 32px rgba(245,200,66,.18); }
+    .hero-gift-item { flex:1; display:flex; align-items:center; gap:14px; padding:1.4rem 1.6rem; }
+    .hero-gift-icon { font-size:42px; flex-shrink:0; }
+    .hero-gift-text { text-align:left; }
+    .hero-gift-sub { font-size:11px; color:rgba(255,255,255,.55); line-height:1.4; margin-bottom:5px; }
+    .hero-gift-name { font-family:'Yomogi',cursive; font-size:16px; color:var(--white); line-height:1.6; font-weight:700; }
+    .hero-gift-highlight { color:var(--gold); font-size:20px; }
+    .hero-gift-divider { width:2px; background:rgba(245,200,66,.3); margin:14px 0; flex-shrink:0; }
+
     /* PHOTO HERO STRIP */
     .photo-strip { position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr 1fr; gap:4px; max-height:260px; overflow:hidden; }
     .photo-strip img { width:100%; height:260px; object-fit:cover; display:block; }
@@ -215,6 +227,28 @@
       親子いっしょにお金の大切さを学びます
     </p>
     <a href="https://form.run/@innoviot-r5UF0e23n4DOOfLYNJj8" target="_blank" class="hero-cta">🎟️ 今すぐ予約する（無料）</a>
+
+    <!-- 参加特典バナー -->
+    <div class="hero-gifts">
+      <div class="hero-gift-label">🎁 参加特典</div>
+      <div class="hero-gift-items">
+        <div class="hero-gift-item">
+          <span class="hero-gift-icon">📚</span>
+          <div class="hero-gift-text">
+            <div class="hero-gift-sub">はじめてのおかねの学びにぴったり！</div>
+            <div class="hero-gift-name">オリジナル<br>デジタル絵本を<br><span class="hero-gift-highlight">プレゼント！</span></div>
+          </div>
+        </div>
+        <div class="hero-gift-divider"></div>
+        <div class="hero-gift-item">
+          <span class="hero-gift-icon">🎫</span>
+          <div class="hero-gift-text">
+            <div class="hero-gift-sub">さらに！</div>
+            <div class="hero-gift-name">Amazon<br>ギフト券<br><span class="hero-gift-highlight">500円分</span><br>プレゼント！</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
 </header>
@@ -292,7 +326,7 @@
   <div class="container">
     <div class="book-inner reveal">
       <div class="book-img">
-        <img src="img-book.png" alt="ドッサリーナ星でおかいもの！絵本" />
+        <img src="img-book.png" alt="ドッサリーナ星でおかいもの！絵本" style="border-radius:var(--radius);" />
       </div>
       <div class="book-text">
         <span class="book-tag">📚 使用する絵本</span>
