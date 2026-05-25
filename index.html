@@ -54,6 +54,13 @@
     @keyframes bounce { 0%,100%{transform:rotate(45deg) translateY(0)} 50%{transform:rotate(45deg) translateY(5px)} }
     @keyframes fadein { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
 
+    /* HERO INFO BAR */
+    .hero-info-bar { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:0; background:rgba(255,255,255,.08); border:1.5px solid rgba(255,255,255,.18); border-radius:999px; padding:.6rem 1.6rem; margin-bottom:1.5rem; animation:fadein .6s .35s ease both; }
+    .hero-info-item { display:flex; align-items:center; gap:7px; padding:.2rem .8rem; }
+    .hero-info-icon { font-size:16px; }
+    .hero-info-text { font-size:13px; font-weight:700; color:var(--white); white-space:nowrap; }
+    .hero-info-sep { width:1.5px; height:20px; background:rgba(255,255,255,.25); flex-shrink:0; }
+
     /* HERO GIFTS */
     .hero-gifts { margin-top:2rem; animation:fadein .6s .5s ease both; }
     .hero-gift-label { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:700; letter-spacing:.12em; color:var(--gold); background:rgba(245,200,66,.15); border:2px solid var(--gold); border-radius:999px; padding:5px 20px; margin-bottom:1rem; }
@@ -226,6 +233,19 @@
       絵本の読み聞かせ＋タブレット体験で<br>
       親子いっしょにお金の大切さを学びます
     </p>
+        <!-- 日時・場所 -->
+    <div class="hero-info-bar">
+      <div class="hero-info-item">
+        <span class="hero-info-icon">📅</span>
+        <span class="hero-info-text">5月30日（土）10:30〜12:00</span>
+      </div>
+      <div class="hero-info-sep"></div>
+      <div class="hero-info-item">
+        <span class="hero-info-icon">📍</span>
+        <span class="hero-info-text">ユニオンビル（武蔵小杉駅 徒歩3分）</span>
+      </div>
+    </div>
+
     <a href="https://form.run/@innoviot-r5UF0e23n4DOOfLYNJj8" target="_blank" class="hero-cta">🎟️ 今すぐ予約する（無料）</a>
 
     <!-- 参加特典バナー -->
