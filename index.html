@@ -54,6 +54,10 @@
     @keyframes bounce { 0%,100%{transform:rotate(45deg) translateY(0)} 50%{transform:rotate(45deg) translateY(5px)} }
     @keyframes fadein { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
 
+    /* HERO PRE BADGE */
+    .hero-pre-badge { display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:700; letter-spacing:.1em; color:#fff; background:linear-gradient(135deg,#ff6fa8,#a855f7); border-radius:999px; padding:5px 18px; margin-bottom:.75rem; box-shadow:0 2px 12px rgba(255,111,168,.4); animation:fadein .6s .25s ease both; }
+    .hero-sub-pre { display:inline-block; margin-top:.5rem; font-size:clamp(12px,2.2vw,14px); color:var(--gold); font-weight:700; line-height:1.8; }
+
     /* HERO INFO BAR */
     .hero-info-bar { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:0; background:rgba(255,255,255,.08); border:1.5px solid rgba(255,255,255,.18); border-radius:999px; padding:.6rem 1.6rem; margin-bottom:1.5rem; animation:fadein .6s .35s ease both; }
     .hero-info-item { display:flex; align-items:center; gap:7px; padding:.2rem .8rem; }
@@ -229,9 +233,9 @@
       <span class="hl-pink">おかね</span>と<span class="hl-gold">おしごと</span>を<br>
       楽しく体験！
     </h1>
+    <div class="hero-pre-badge">🚀 プレイベント開催！</div>
     <p class="hero-sub">
-      絵本の読み聞かせ＋タブレット体験で<br>
-      親子いっしょにお金の大切さを学びます
+      <span class="hero-sub-pre">新しいイベントの<strong>プレ体験</strong>に<br>ご参加いただける方を少人数で募集しています！</span>
     </p>
         <!-- 日時・場所 -->
     <div class="hero-info-bar">
@@ -264,7 +268,7 @@
           <span class="hero-gift-icon">🎫</span>
           <div class="hero-gift-text">
             <div class="hero-gift-sub">さらに！</div>
-            <div class="hero-gift-name">Amazon<br>ギフト券<br><span class="hero-gift-highlight">500円分</span><br>プレゼント！</div>
+            <div class="hero-gift-name">Amazon<br>ギフト券<br><span class="hero-gift-highlight">1,000円分</span><br>プレゼント！</div>
           </div>
         </div>
       </div>
@@ -278,9 +282,6 @@
 <!-- INFO STRIP -->
 <div class="container">
   <div class="info-strip reveal">
-    <div class="info-item"><span class="info-icon">📅</span><div class="info-label">開催日</div><div class="info-value">5月30日（土）</div></div>
-    <div class="info-item"><span class="info-icon">🕙</span><div class="info-label">時間</div><div class="info-value">10:30〜12:00</div></div>
-    <div class="info-item"><span class="info-icon">📍</span><div class="info-label">場所</div><div class="info-value">ユニオンビル<br><span style="font-size:11px;font-weight:400;color:rgba(255,255,255,.5);">武蔵小杉駅 徒歩3分</span></div></div>
     <div class="info-item"><span class="info-icon">👧</span><div class="info-label">対象</div><div class="info-value">4〜6歳＋保護者</div></div>
     <div class="info-item"><span class="info-icon">🔥</span><div class="info-label">定員</div><div class="info-value" style="color:#ff6fa8;">10世帯限定</div></div>
     <div class="info-item"><span class="info-icon">💴</span><div class="info-label">参加費</div><div class="info-value accent">無料！</div></div>
